@@ -8,22 +8,20 @@ type MessageType = {
 
 function App() {
   const [message, setMessage] = useState("");
-  const [sentMessages, setSentMessages] = useState<MessageType[]>([
-    {
-      timeStamp: "12:49 AM",
-      msg: "You good?",
-    },
-  ]);
+  const [sentMessages, setSentMessages] = useState<MessageType[]>([]);
 
   const getCurrentTime = (): string => {
     const currentTime = new Date();
-    const currentHours = currentTime.getHours();
-    const currentMinutes = currentTime.getMinutes();
+    const hours = currentTime.getHours();
+    const minutes = currentTime.getMinutes();
+    const amOrPm = hours >= 12 ? "PM" : "AM";
 
-    return `${currentHours === 0 ? 12 : currentHours}:${currentMinutes} ${
-      currentHours >= 12 ? "PM" : "AM"
-    }`;
+    const formattedHours = hours === 0 ? 12 : hours < 10 ? `0${hours}` : hours;
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+
+    return `${formattedHours}:${formattedMinutes} ${amOrPm}`;
   };
+
   console.log(getCurrentTime());
 
   const handleSendMessage = () => {
