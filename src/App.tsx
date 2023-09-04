@@ -43,11 +43,11 @@ function App() {
   return (
     <div className="App h-[100dvh] w-full flex items-center justify-center bg-gray-50 text-gray-800 text-sm">
       <div className="chat-window h-full w-full sm:h-[36rem] sm:w-[30rem] sm:rounded-2xl bg-white overflow-auto flex flex-col gap-3 justify-between p-1">
-        <div className="chats h-full space-y-1 flex flex-col mr-10">
+        <div className="chats h-full space-y-1 flex flex-col mr-12">
           {sentMessages.map((msg, idx) => (
             <div
               key={idx}
-              className="msg bg-blue-500 text-white w-fit px-3 py-1 rounded-2xl ml-auto mt-auto"
+              className="msg bg-blue-500 text-white w-fit px-3 py-1 rounded-2xl ml-auto mt-auto max-w-[280px] sm:max-w-xs"
             >
               <span className="message">{msg.msg}</span>
               <span className="time text-[9px] ml-1.5">{msg.timeStamp}</span>
@@ -61,13 +61,13 @@ function App() {
             onKeyDown={handleInputKeydown}
             type="text"
             placeholder="Type a message"
-            className="bg-gray-50 w-full rounded-full outline-none px-5 py-2.5 text-sm"
+            className="bg-gray-50 w-full rounded-full outline-none px-5 py-3 text-sm"
           />
           <button
             onClick={handleSendMessage}
-            className="bg-blue-500 hover:bg-blue-600 transition-all hob w-11 h-10 rounded-full flex items-center justify-center"
+            className="bg-blue-500 hover:bg-blue-600 transition-all hob w-14 h-12 rounded-full flex items-center justify-center"
           >
-            <PaperAirplaneIcon className="h-[18px] w-[18px] text-white ml-0.5" />
+            <PaperAirplaneIcon className="h-5 w-5 text-white ml-0.5" />
           </button>
         </div>
       </div>
