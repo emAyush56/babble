@@ -41,7 +41,7 @@ function App() {
   };
 
   return (
-    <div className="App h-screen w-full flex items-center justify-center bg-gray-50 text-gray-800 text-sm">
+    <div className="App h-[100dvh] w-full flex items-center justify-center bg-gray-50 text-gray-800 text-sm">
       <div className="chat-window h-full w-full sm:h-[36rem] sm:w-[30rem] sm:rounded-2xl bg-white overflow-auto flex flex-col gap-3 justify-between p-1">
         <div className="chats h-full space-y-1 flex flex-col mr-10">
           {sentMessages.map((msg, idx) => (
